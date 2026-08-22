@@ -1,0 +1,17 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "vitepress": "^1.6.4",
+    "vitepress-plugin-rss": "^0.4.4"
+  },
+  "scripts": {
+    "sidebar": "node scripts/generateSidebar.js",
+    "docs:dev": "npm run sidebar && vitepress dev docs",
+    "docs:build": "npm run sidebar && vitepress build docs",
+    "docs:preview": "npm run sidebar && vitepress preview docs"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "minimatch": "^10.2.6"
+  }
+}
