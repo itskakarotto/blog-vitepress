@@ -3,10 +3,7 @@ import { RssPlugin } from 'vitepress-plugin-rss'
 
 // ⚠️ 替换为你的 GitHub 信息
 const username = 'itskakarotto'
-const repoName = 'blog-vitepress'
-const baseUrl = repoName 
-  ? `https://${username}.github.io/${repoName}`
-  : `https://${username}.github.io`
+const baseUrl = `https://${username}.github.io`
 
 /**
  * RSS 插件配置
