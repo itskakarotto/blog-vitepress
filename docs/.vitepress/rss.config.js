@@ -2,11 +2,7 @@
 import { RssPlugin } from 'vitepress-plugin-rss'
 
 // ⚠️ 替换为你的 GitHub 信息
-const username = 'itskakarotto'
-const repoName = ''
-const baseUrl = repoName 
-  ? `https://${username}.github.io/${repoName}`
-  : `https://${username}.github.io`
+const baseUrl = 'https://blog.ddzxxc.com'
 
 /**
  * RSS 插件配置
