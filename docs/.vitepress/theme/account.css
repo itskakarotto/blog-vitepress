@@ -1,0 +1,336 @@
+.finance-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 16px;
+    background: var(--vp-c-bg-soft);
+    border-radius: 16px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: var(--vp-c-text-1);
+  }
+  
+  /* 统计卡片 */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  
+  .stat-item {
+    text-align: center;
+    background: var(--vp-c-bg-mute);
+    padding: 14px 10px;
+    border-radius: 12px;
+    border-left: 4px solid;
+  }
+  
+  .stat-item.income {
+    border-left-color: #52c41a;
+  }
+  .stat-item.expense {
+    border-left-color: #ff4d4f;
+  }
+  .stat-item.balance.positive {
+    border-left-color: #52c41a;
+  }
+  .stat-item.balance.negative {
+    border-left-color: #ff4d4f;
+  }
+  
+  .stat-item .label {
+    display: block;
+    font-size: 12px;
+    color: var(--vp-c-text-3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .stat-item .value {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 2px;
+    color: var(--vp-c-text-1);
+  }
+  
+  /* 分类列表 */
+  .section {
+    margin-bottom: 28px;
+  }
+  
+  .section h2 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--vp-c-text-1);
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--vp-c-divider);
+  }
+  
+  .category-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .category-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .category-item {
+    display: grid;
+    grid-template-columns: 32px 1fr auto auto 24px;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background: var(--vp-c-bg);
+    border-radius: 10px;
+    border: 1px solid var(--vp-c-divider);
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+    /* 粘性定位 */
+    position: sticky;
+    top: 60px;
+    z-index: 10;
+    background: var(--vp-c-bg);
+  }
+  
+  .category-item:hover {
+    border-color: var(--vp-c-brand-1);
+    transform: translateX(4px);
+  }
+  
+  .category-item:active {
+    transform: scale(0.98);
+  }
+  
+  .cat-icon {
+    font-size: 18px;
+    line-height: 1;
+    text-align: center;
+  }
+  
+  .cat-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--vp-c-text-1);
+  }
+  
+  .cat-amount {
+    font-size: 14px;
+    font-weight: 600;
+    justify-self: end;
+  }
+  
+  .expense-item .cat-amount {
+    color: #ff4d4f;
+  }
+  .income-item .cat-amount {
+    color: #52c41a;
+  }
+  
+  .cat-count {
+    font-size: 11px;
+    color: var(--vp-c-text-3);
+    background: var(--vp-c-bg-mute);
+    padding: 1px 10px;
+    border-radius: 12px;
+    white-space: nowrap;
+  }
+  
+  .expand-icon {
+    font-size: 14px;
+    color: var(--vp-c-text-3);
+    transition: transform 0.25s ease;
+    text-align: center;
+  }
+  
+  /* 明细列表 */
+  .detail-list {
+    margin-left: 16px;
+    padding: 4px 0 6px 20px;
+    border-left: 2px solid var(--vp-c-divider);
+    animation: slideDown 0.25s ease;
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .detail-item {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 10px;
+    padding: 5px 12px;
+    font-size: 13px;
+    color: var(--vp-c-text-2);
+    border-radius: 6px;
+    transition: background 0.15s;
+  }
+  
+  .detail-item:hover {
+    background: var(--vp-c-bg-mute);
+  }
+  
+  .detail-date {
+    font-size: 12px;
+    color: var(--vp-c-text-3);
+    font-weight: 500;
+  }
+  
+  .detail-note {
+    font-size: 13px;
+    color: var(--vp-c-text-2);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .detail-amount {
+    font-size: 13px;
+    font-weight: 600;
+    justify-self: end;
+    white-space: nowrap;
+  }
+  
+  .detail-amount.expense {
+    color: #ff4d4f;
+  }
+  .detail-amount.income {
+    color: #52c41a;
+  }
+  
+  .empty-tip {
+    text-align: center;
+    color: var(--vp-c-text-3);
+    font-size: 13px;
+    padding: 16px 0;
+  }
+  
+  /* 移动端适配 */
+  @media (max-width: 768px) {
+    .finance-container {
+      padding: 14px 10px;
+    }
+    h1 {
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+    .stats {
+      gap: 8px;
+    }
+    .stat-item {
+      padding: 10px 6px;
+    }
+    .stat-item .value {
+      font-size: 16px;
+    }
+    .stat-item .label {
+      font-size: 10px;
+    }
+    .category-item {
+      padding: 8px 12px;
+      gap: 6px;
+      grid-template-columns: 28px 1fr auto auto 20px;
+    }
+    .cat-icon {
+      font-size: 16px;
+    }
+    .cat-name {
+      font-size: 13px;
+    }
+    .cat-amount {
+      font-size: 13px;
+    }
+    .cat-count {
+      font-size: 10px;
+      padding: 0 8px;
+    }
+    .expand-icon {
+      font-size: 12px;
+    }
+    .section h2 {
+      font-size: 14px;
+    }
+    .detail-list {
+      margin-left: 8px;
+      padding: 4px 0 6px 14px;
+    }
+    .detail-item {
+      grid-template-columns: 70px 1fr auto;
+      gap: 6px;
+      padding: 4px 10px;
+      font-size: 12px;
+    }
+    .detail-date {
+      font-size: 11px;
+    }
+    .detail-amount {
+      font-size: 12px;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .stats {
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+    }
+    .stat-item:last-child {
+      grid-column: 1 / -1;
+    }
+    .stat-item .value {
+      font-size: 14px;
+    }
+    .category-item {
+      grid-template-columns: 24px 1fr auto auto 18px;
+      gap: 4px;
+      padding: 6px 10px;
+    }
+    .cat-icon {
+      font-size: 14px;
+    }
+    .cat-name {
+      font-size: 12px;
+    }
+    .cat-amount {
+      font-size: 12px;
+    }
+    .cat-count {
+      font-size: 9px;
+      padding: 0 6px;
+    }
+    .detail-item {
+      grid-template-columns: 60px 1fr auto;
+      gap: 4px;
+      padding: 3px 8px;
+      font-size: 11px;
+    }
+    .detail-date {
+      font-size: 10px;
+    }
+  }
+  
+  /* 暗色适配 */
+  .dark .category-item {
+    background: var(--vp-c-bg-mute);
+    border-color: var(--vp-c-divider);
+  }
+  .dark .category-item:hover {
+    border-color: var(--vp-c-brand-1);
+  }
+  .dark .detail-item:hover {
+    background: var(--vp-c-bg-soft);
+  }

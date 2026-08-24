@@ -8,6 +8,7 @@ export default {
         { text: '首页', link: '/' },
         { text: '示例', link: '/example/markdown-examples' },
         { text: '归档', link: '/archive' },
+        { text: '记账', link: '/account' },
     ],
 
     // 侧边栏

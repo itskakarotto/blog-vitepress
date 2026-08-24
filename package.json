@@ -1,6 +1,7 @@
 {
   "type": "module",
   "devDependencies": {
+    "echarts": "^6.1.0",
     "vitepress": "^1.6.4",
     "vitepress-plugin-rss": "^0.4.4"
   },
